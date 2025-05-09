@@ -62,7 +62,12 @@
 
         teste {
             bindings = <&sl 1>;
-            key-positions = <0 1 2 3>;
+            key-positions = <12 13 14 15>;
+        };
+
+        testee {
+            bindings = <&tog 1>;
+            key-positions = <25 26 27 28>;
         };
     };
 
