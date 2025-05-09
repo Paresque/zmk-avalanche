@@ -57,7 +57,14 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        teste {
+            bindings = <&sl 1>;
+            key-positions = <0 1 2 3>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -76,12 +83,26 @@
 &kp TAB    &kp Q         &kp W  &kp E  &kp R  &kp T                     &kp Y      &kp U          &kp I  &kp O  &kp P              &kp MINUS
 &none      &kp LSHIFT    &kp A  &kp S  &kp D  &kp F      &kp G                     &kp H          &kp J  &kp K  &kp L              &kp SEMICOLON  &kp EQUAL  &none
 &kp LCTRL  &kp Z         &kp X  &kp C  &kp V  &kp B      &none  &trans  &trans     &none          &kp N  &kp M  &kp COMMA          &kp PERIOD     &kp FSLH   &kp RSHIFT
-           &kp LEFT_GUI  &mo 1  &mo 2  &mo 3  &kp ENTER                 &kp SPACE  &kp BACKSPACE  &none  &none  &kp RIGHT_CONTROL
+           &kp LEFT_GUI  &mo 2  &mo 3  &mo 4  &kp ENTER                 &kp SPACE  &kp BACKSPACE  &none  &none  &kp RIGHT_CONTROL
             >;
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
+        };
+
+        transparent-layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp UP_ARROW DOWN>,
+                <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         CONFIG {
