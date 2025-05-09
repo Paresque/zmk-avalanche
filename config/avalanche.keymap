@@ -69,6 +69,11 @@
             bindings = <&tog 1>;
             key-positions = <26 27 28 29>;
         };
+
+        ewrq {
+            bindings = <&sl 0>;
+            key-positions = <39 40 41 42>;
+        };
     };
 
     keymap {
