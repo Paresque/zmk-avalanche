@@ -60,19 +60,9 @@
     combos {
         compatible = "zmk,combos";
 
-        teste {
-            bindings = <&sl 1>;
-            key-positions = <13 14 15 16>;
-        };
-
-        testee {
+        toggle-0-e-1 {
             bindings = <&tog 1>;
-            key-positions = <26 27 28 29>;
-        };
-
-        ewrq {
-            bindings = <&sl 0>;
-            key-positions = <39 40 41 42>;
+            key-positions = <13 14 15 16>;
         };
     };
 
