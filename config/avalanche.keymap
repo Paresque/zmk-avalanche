@@ -74,6 +74,11 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <18 19 20>;
         };
+
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <19 20 21>;
+        };
     };
 
     keymap {
