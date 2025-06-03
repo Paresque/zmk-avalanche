@@ -87,6 +87,26 @@
             bindings = <&kp DEL>;
             key-positions = <19 20 21>;
         };
+
+        eq {
+            bindings = <&kp EQUAL>;
+            key-positions = <13 15>;
+        };
+
+        less {
+            bindings = <&kp LESS_THAN>;
+            key-positions = <17 34>;
+        };
+
+        greater {
+            bindings = <&kp GREATER_THAN>;
+            key-positions = <30 17>;
+        };
+
+        underscore {
+            bindings = <&kp UNDER>;
+            key-positions = <19 28>;
+        };
     };
 
     keymap {
@@ -111,7 +131,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
+                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         transparent-layer {
@@ -122,6 +142,10 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans
         &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
             >;
+
+            sensor-bindings =
+                <&inc_dec_kp UP_ARROW DOWN>,
+                <&inc_dec_kp RIGHT LEFT>;
         };
 
         CONFIG {
