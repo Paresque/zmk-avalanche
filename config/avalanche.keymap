@@ -107,6 +107,11 @@
             bindings = <&kp UNDER>;
             key-positions = <19 28>;
         };
+
+        hifen {
+            bindings = <&kp MINUS>;
+            key-positions = <31 20>;
+        };
     };
 
     keymap {
