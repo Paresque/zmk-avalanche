@@ -23,3 +23,6 @@
     status = "okay";
 };
 
+&right_encoder {
+    status = "disabled";
+};
