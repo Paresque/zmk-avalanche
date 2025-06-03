@@ -55,6 +55,14 @@
             bindings = <&kp ESC &kp COLON &kp PERCENT &kp S &kp SLASH>;
             label = "REPLACE";
         };
+
+        cedilha: cedilha {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp APOS &kp C>, <&macro_tap>;
+
+            label = "CEDILHA";
+        };
     };
 
     combos {
