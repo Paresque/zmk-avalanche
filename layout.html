@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Visualização do Teclado Avalanche</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      font-family: sans-serif;
+    }
+    .keyboard {
+      position: relative;
+      width: 1000px;
+      height: 600px;
+      margin: 50px auto;
+      background-color: #2c2c2c;
+      border: 2px solid #555;
+      border-radius: 10px;
+    }
+    .key {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #444;
+      border: 2px solid #888;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .key:hover {
+      background-color: #666;
+    }
+    .encoder {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: #999;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Teclado Avalanche - Layout Visual</h2>
+
+<div class="keyboard" id="keyboard"></div>
+
+<script>
+  const layout = [
+    { "row": 1, "col": 1, "x": 1, "y": 1.5 },
+    { "row": 1, "col": 2, "x": 2, "y": 1.2 },
+    { "row": 1, "col": 3, "x": 3, "y": 1 },
+    { "row": 1, "col": 4, "x": 4, "y": 1.25 },
+    { "row": 1, "col": 5, "x": 5, "y": 1.25 },
+    { "row": 1, "col": 8, "x": 11, "y": 1.25 },
+    { "row": 1, "col": 9, "x": 12, "y": 1.25 },
+    { "row": 1, "col": 10, "x": 13, "y": 1 },
+    { "row": 1, "col": 11, "x": 14, "y": 1.2 },
+    { "row": 1, "col": 12, "x": 15, "y": 1.5 },
+    { "row": 2, "col": 2, "x": 1, "y": 2.5 },
+    { "row": 2, "col": 3, "x": 2, "y": 2.2 },
+    { "row": 2, "col": 4, "x": 3, "y": 2 },
+    { "row": 2, "col": 5, "x": 4, "y": 2.25 },
+    { "row": 2, "col": 6, "x": 5, "y": 2.25 },
+    { "row": 2, "col": 9, "x": 11, "y": 2.25 },
+    { "row": 2, "col": 10, "x": 12, "y": 2.25 },
+    { "row": 2, "col": 11, "x": 13, "y": 2 },
+    { "row": 2, "col": 12, "x": 14, "y": 2.2 },
+    { "row": 2, "col": 13, "x": 15, "y": 2.5 },
+    { "row": 3, "col": 0, "x": 0, "y": 3.5 },
+    { "row": 3, "col": 1, "x": 1, "y": 3.5 },
+    { "row": 3, "col": 2, "x": 2, "y": 3.2 },
+    { "row": 3, "col": 3, "x": 3, "y": 3 },
+    { "row": 3, "col": 4, "x": 4, "y": 3.25 },
+    { "row": 3, "col": 5, "x": 5, "y": 3.25 },
+    { "row": 3, "col": 6, "x": 6, "y": 3.25 },
+    { "row": 3, "col": 7, "x": 7, "y": 3.25 },
+    { "row": 3, "col": 8, "x": 9, "y": 3.25 },
+    { "row": 3, "col": 9, "x": 10, "y": 3.25 },
+    { "row": 3, "col": 10, "x": 11, "y": 3.25 },
+    { "row": 3, "col": 11, "x": 12, "y": 3.25 },
+    { "row": 3, "col": 12, "x": 13, "y": 3 },
+    { "row": 3, "col": 13, "x": 14, "y": 3.2 },
+    { "row": 3, "col": 14, "x": 15, "y": 3.5 },
+    { "row": 3, "col": 15, "x": 16, "y": 3.5 },
+    { "row": 4, "col": 1, "x": 3, "y": 4.05 },
+    { "row": 4, "col": 2, "x": 4, "y": 4.25 },
+    { "row": 4, "col": 3, "x": 5, "y": 4.25 },
+    { "row": 4, "col": 4, "x": 6, "y": 4.25 },
+    { "row": 4, "col": 5, "x": 7, "y": 4.25 },
+    { "row": 4, "col": 8, "x": 9, "y": 4.25 },
+    { "row": 4, "col": 9, "x": 10, "y": 4.25 },
+    { "row": 4, "col": 10, "x": 11, "y": 4.25 },
+    { "row": 4, "col": 11, "x": 12, "y": 4.25 },
+    { "row": 4, "col": 12, "x": 13, "y": 4.05 },
+  ];
+
+  const encoders = [
+    { x: 2.5, y: 5, label: "Encoder Left" },
+    { x: 13.5, y: 5, label: "Encoder Right" }
+  ];
+
+  const keyboard = document.getElementById('keyboard');
+
+  layout.forEach(key => {
+    const keyDiv = document.createElement('div');
+    keyDiv.className = 'key';
+    keyDiv.style.left = `${key.x * 60 + 100}px`;
+    keyDiv.style.top = `${key.y * 60 + 50}px`;
+    keyDiv.innerText = `${key.row},${key.col}`;
+    keyboard.appendChild(keyDiv);
+  });
+
+  encoders.forEach(encoder => {
+    const encDiv = document.createElement('div');
+    encDiv.className = 'encoder';
+    encDiv.style.left = `${encoder.x * 60 + 100}px`;
+    encDiv.style.top = `${encoder.y * 60 + 50}px`;
+    encDiv.innerText = '⟳';
+    keyboard.appendChild(encDiv);
+  });
+</script>
+
+</body>
+</html>
