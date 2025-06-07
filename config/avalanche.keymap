@@ -71,67 +71,67 @@
         toggle-0-e-1 {
             bindings = <&tog 1>;
             key-positions = <13 14 15 16>;
-            timeout-ms = <100>;
+            timeout-ms = <70>;
         };
 
         enter {
             bindings = <&kp ENTER>;
             key-positions = <30 29 28>;
-            timeout-ms = <100>;
+            timeout-ms = <70>;
         };
 
         backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <31 32>;
-            timeout-ms = <100>;
+            timeout-ms = <70>;
         };
 
         del {
             bindings = <&kp DEL>;
             key-positions = <32 33>;
-            timeout-ms = <100>;
+            timeout-ms = <70>;
         };
 
         eq {
             bindings = <&kp EQUAL>;
             key-positions = <13 15>;
-            timeout-ms = <100>;
+            timeout-ms = <70>;
         };
 
         less {
             bindings = <&kp LESS_THAN>;
             key-positions = <17 34>;
-            timeout-ms = <100>;
+            timeout-ms = <70>;
         };
 
         greater {
             bindings = <&kp GREATER_THAN>;
             key-positions = <30 17>;
-            timeout-ms = <100>;
+            timeout-ms = <70>;
         };
 
         underscore {
             bindings = <&kp UNDER>;
             key-positions = <19 28>;
-            timeout-ms = <100>;
+            timeout-ms = <70>;
         };
 
         hifen {
             bindings = <&kp MINUS>;
             key-positions = <31 20>;
-            timeout-ms = <100>;
+            timeout-ms = <70>;
         };
 
         aspas-duplas {
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <26 28>;
-            timeout-ms = <100>;
+            timeout-ms = <70>;
         };
 
         aspas-simples {
             bindings = <&kp SINGLE_QUOTE>;
             key-positions = <26 27>;
-            timeout-ms = <100>;
+            timeout-ms = <70>;
         };
     };
 
