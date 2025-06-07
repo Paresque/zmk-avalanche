@@ -80,12 +80,12 @@
 
         backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <18 19 20>;
+            key-positions = <31 32>;
         };
 
         del {
             bindings = <&kp DEL>;
-            key-positions = <19 20 21>;
+            key-positions = <32 33>;
         };
 
         eq {
@@ -111,6 +111,16 @@
         hifen {
             bindings = <&kp MINUS>;
             key-positions = <31 20>;
+        };
+
+        aspas-duplas {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <25 27>;
+        };
+
+        aspas-simples {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <25 26>;
         };
     };
 
